@@ -3,6 +3,7 @@ import WebApp from '@twa-dev/sdk'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { TonConnectButton } from '@tonconnect/ui-react'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,6 +26,7 @@ function App() {
         <button onClick={() => WebApp.showAlert('this is tma-sample.')}>
           showAlert
         </button>
+        <TonConnectButton />
       </div>
     </>
   )
