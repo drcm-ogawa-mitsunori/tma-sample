@@ -3,14 +3,14 @@ import WebApp from '@twa-dev/sdk'
 import './App.css'
 import { TonConnectButton } from '@tonconnect/ui-react'
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
-import {
-  MetaMaskButton,
-  useAccount,
-} from "@metamask/sdk-react-ui"
+// import {
+//   MetaMaskButton,
+//   useAccount,
+// } from "@metamask/sdk-react-ui"
 
 function App() {
   const [count, setCount] = useState(0);
-  const { isConnected, connector } = useAccount();
+  // const { isConnected, connector } = useAccount();
   
   return (
     <>
@@ -25,14 +25,14 @@ function App() {
         <br />
         {/* <ConnectButton /> */}
         <br />
-        {/* <w3m-button /> */}
-        { isConnected ? (
+        <w3m-button />
+        {/* { isConnected ? (
           <button onClick={() => connector?.disconnect()}>
             disconnect MetaMask
           </button>
         ) : (
           <MetaMaskButton />
-        )}
+        )} */}
         <button onClick={() => window.open('https://metamask.app.link/dapp/example.com', '_blank')}>
           window.open
         </button>
