@@ -2,7 +2,7 @@ import { useState } from 'react'
 import WebApp from '@twa-dev/sdk'
 import './App.css'
 import { TonConnectButton } from '@tonconnect/ui-react'
-// import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 // import {
 //   MetaMaskButton,
 //   useAccount,
@@ -23,9 +23,9 @@ function App() {
         </button>
         <TonConnectButton />
         <br />
-        {/* <ConnectButton /> */}
+        <ConnectButton />
         <br />
-        <w3m-button />
+        {/* <w3m-button /> */}
         {/* { isConnected ? (
           <button onClick={() => connector?.disconnect()}>
             disconnect MetaMask
