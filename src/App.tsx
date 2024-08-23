@@ -41,6 +41,9 @@ function App() {
         <button onClick={() => WebApp.openTelegramLink('https://t.me/wallet')}>
           WebApp.openTelegramLink
         </button>
+        <button onClick={() => window.open('metamask://dapp/example.com', '_blank')}>
+          window.open Metamask native
+        </button>
       </div>
     </>
   )

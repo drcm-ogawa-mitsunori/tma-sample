@@ -15,12 +15,7 @@ import { defaultWagmiConfig } from '@web3modal/wagmi/react/config'
 import App from './App.tsx'
 import './index.css'
 
-// NOTE: PC で真っ白画面になったので、もしエラーが出ていたら握り潰してみる
-try {
-  WebApp.ready();
-} catch (err) {
-  console.error(err);
-}
+WebApp.ready();
 
 // const wagmiConfig = getDefaultConfig({
 //   appName: 'ConnectingSample',
