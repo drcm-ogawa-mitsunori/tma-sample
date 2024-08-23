@@ -29,7 +29,9 @@ function App() {
         </button>
         <TonConnectButton />
         <br />
-        <ConnectButton />
+        {/* <ConnectButton /> */}
+        <br />
+        <w3m-button />
       </div>
     </>
   )
