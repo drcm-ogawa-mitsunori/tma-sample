@@ -16,13 +16,6 @@ import { defaultWagmiConfig } from '@web3modal/wagmi/react/config'
 import App from './App.tsx'
 import './index.css'
 
-// NOTE: https://github.com/orgs/WalletConnect/discussions/4574#discussioncomment-9992027
-window.open = (function (open) {
-	return function (url, _, features) {
-		return open.call(window, url, "_blank", features);
-	};
-})(window.open);
-
 WebApp.ready();
 
 // NOTE: WebApp.openLink を使う、駄目でした

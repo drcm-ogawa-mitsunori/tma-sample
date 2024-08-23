@@ -8,6 +8,14 @@ import { TonConnectButton } from '@tonconnect/ui-react'
 //   useAccount,
 // } from "@metamask/sdk-react-ui"
 
+// NOTE: https://github.com/orgs/WalletConnect/discussions/4574#discussioncomment-9992027
+const originalOpen = window.open;
+window.open = (function (open) {
+	return function (url, _target, _features) {
+		return open.call(window, url);
+	};
+})(window.open);
+
 function App() {
   const [count, setCount] = useState(0);
   // const { isConnected, connector } = useAccount();
@@ -33,8 +41,11 @@ function App() {
         ) : (
           <MetaMaskButton />
         )} */}
-        <button onClick={() => window.open('https://metamask.app.link/dapp/example.com', '_blank')}>
+        <button onClick={() => window.open('https://metamask.app.link/dapp/example.com')}>
           window.open
+        </button>
+        <button onClick={() => originalOpen('https://metamask.app.link/dapp/example.com', '_blank')}>
+          window.open to blank
         </button>
         <button onClick={() => WebApp.openLink('https://metamask.app.link/dapp/example.com')}>
           WebApp.openLink
