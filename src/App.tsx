@@ -32,13 +32,13 @@ function App() {
         {/* <ConnectButton /> */}
         <br />
         <w3m-button />
-        <button onClick={() => window.open('http://example.com', '_blank')}>
+        <button onClick={() => window.open('https://metamask.app.link/dapp/example.com', '_blank')}>
           window.open
         </button>
-        <button onClick={() => WebApp.openLink('http://example.com')}>
+        <button onClick={() => WebApp.openLink('https://metamask.app.link/dapp/example.com')}>
           WebApp.openLink
         </button>
-        <button onClick={() => WebApp.openTelegramLink('https://t.me/CatizenAI/60111/100980')}>
+        <button onClick={() => WebApp.openTelegramLink('https://t.me/wallet')}>
           WebApp.openTelegramLink
         </button>
       </div>
