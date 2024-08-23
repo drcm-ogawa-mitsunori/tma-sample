@@ -17,13 +17,25 @@ import App from './App.tsx'
 import './index.css'
 
 // NOTE: https://github.com/orgs/WalletConnect/discussions/4574#discussioncomment-9992027
-window.open = (function (open) {
-	return function (url, _, features) {
-		return open.call(window, url, "_blank", features);
-	};
-})(window.open);
+// window.open = (function (open) {
+// 	return function (url, _, features) {
+// 		return open.call(window, url, "_blank", features);
+// 	};
+// })(window.open);
 
 WebApp.ready();
+
+// NOTE: WebApp.openLink を使う
+window.open = (url?: string | URL, _target?: string, _features?: string) => {
+  if (typeof url === 'string') {
+    WebApp.openLink(url);
+    return window;
+  } else if (url) {
+    WebApp.openLink(url.toString());
+    return window;
+  }
+  return null;
+}
 
 // const wagmiConfig = getDefaultConfig({
 //   appName: 'ConnectingSample',
