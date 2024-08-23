@@ -2,6 +2,7 @@ import { useState } from 'react'
 import WebApp from '@twa-dev/sdk'
 import './App.css'
 import { TonConnectButton } from '@tonconnect/ui-react'
+import { useAccount, useSignMessage } from 'wagmi';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
 // import {
 //   MetaMaskButton,
@@ -19,6 +20,8 @@ window.open = (function (open) {
 function App() {
   const [count, setCount] = useState(0);
   // const { isConnected, connector } = useAccount();
+  const { isConnected } = useAccount();
+  const { signMessage } = useSignMessage();
   
   return (
     <>
@@ -41,6 +44,11 @@ function App() {
         ) : (
           <MetaMaskButton />
         )} */}
+        { isConnected && (
+          <button onClick={() => signMessage({ message: 'ogwmtnr sample.' })}>
+            signMessage
+          </button>
+        )}
         <button onClick={() => window.open('https://metamask.app.link/dapp/example.com')}>
           window.open
         </button>
