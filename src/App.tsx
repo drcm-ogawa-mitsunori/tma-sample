@@ -32,6 +32,15 @@ function App() {
         {/* <ConnectButton /> */}
         <br />
         <w3m-button />
+        <button onClick={() => window.open('http://example.com', '_blank')}>
+          window.open
+        </button>
+        <button onClick={() => WebApp.openLink('http://example.com')}>
+          WebApp.openLink
+        </button>
+        <button onClick={() => WebApp.openTelegramLink('https://t.me/CatizenAI/60111/100980')}>
+          WebApp.openTelegramLink
+        </button>
       </div>
     </>
   )
