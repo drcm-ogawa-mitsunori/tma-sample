@@ -3,6 +3,7 @@ import WebApp from '@twa-dev/sdk'
 import './App.css'
 import { TonConnectButton } from '@tonconnect/ui-react'
 import { useAccount, useSignMessage } from 'wagmi';
+import { URLSearchParams } from 'url';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
 // import {
 //   MetaMaskButton,
@@ -17,11 +18,20 @@ window.open = (function (open) {
 	};
 })(window.open);
 
+const shareParams = new URLSearchParams({
+  url: "https://t.me/OgawaTestBot/gameapp?startapp=rp_29054580",
+  text: "私は小川。\n共に戦おう。",
+});
+const shareUrl = `https://t.me/share/url?${shareParams.toString()}`
+
 function App() {
   const [count, setCount] = useState(0);
   // const { isConnected, connector } = useAccount();
   const { isConnected } = useAccount();
   const { signMessage } = useSignMessage();
+
+
+  https://t.me/share/url?url ={url}&text={text}
   
   return (
     <>
@@ -63,6 +73,9 @@ function App() {
         </button>
         <button onClick={() => window.open('metamask://dapp/example.com', '_blank')}>
           window.open Metamask native
+        </button>
+        <button onClick={() => WebApp.openTelegramLink(shareUrl)}>
+          Invite Message
         </button>
       </div>
     </>
