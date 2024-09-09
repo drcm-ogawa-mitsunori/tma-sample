@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import WebApp from '@twa-dev/sdk'
+import { BrowserRouter } from 'react-router-dom';
 import { TonConnectUIProvider } from '@tonconnect/ui-react'
 // import { RainbowKitProvider, getDefaultConfig } from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
@@ -65,25 +66,27 @@ createWeb3Modal({
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <TonConnectUIProvider manifestUrl="https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json">
-      <WagmiProvider config={wagmiConfig}>
-        <QueryClientProvider client={queryClient}>
-          {/* <RainbowKitProvider> */}
-            <App />
-          {/* </RainbowKitProvider> */}
-        </QueryClientProvider>
-      </WagmiProvider>
-      {/* <MetaMaskUIProvider
-        sdkOptions={{
-          dappMetadata: {
-            name: "Example React UI Dapp",
-            url: window.location.href,
-          },
-          infuraAPIKey: '4e4a26022bed4b7abe20bd06b1a9a9d5',
-        }}
-      >
-        <App />
-      </MetaMaskUIProvider> */}
-    </TonConnectUIProvider>
+    <BrowserRouter>
+      <TonConnectUIProvider manifestUrl="https://raw.githubusercontent.com/ton-community/tutorials/main/03-client/test/public/tonconnect-manifest.json">
+        <WagmiProvider config={wagmiConfig}>
+          <QueryClientProvider client={queryClient}>
+            {/* <RainbowKitProvider> */}
+              <App />
+            {/* </RainbowKitProvider> */}
+          </QueryClientProvider>
+        </WagmiProvider>
+        {/* <MetaMaskUIProvider
+          sdkOptions={{
+            dappMetadata: {
+              name: "Example React UI Dapp",
+              url: window.location.href,
+            },
+            infuraAPIKey: '4e4a26022bed4b7abe20bd06b1a9a9d5',
+          }}
+        >
+          <App />
+        </MetaMaskUIProvider> */}
+      </TonConnectUIProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 )

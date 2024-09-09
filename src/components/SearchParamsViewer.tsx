@@ -10,24 +10,17 @@ export const SearchParamsViewer = () => {
     if (0 < searchParamsStrList.length) {
       const lastSearchParamsStr = searchParamsStrList[searchParamsStrList.length - 1];
       if (lastSearchParamsStr !== searchParamsStr) {
-        setSearchParamsStrList([...searchParamsStrList, searchParamsStr]);
+        setSearchParamsStrList([searchParamsStr, ...searchParamsStrList]);
       }
     } else {
-      setSearchParamsStrList([...searchParamsStrList, searchParamsStr]);
+      setSearchParamsStrList([searchParamsStr, ...searchParamsStrList]);
     }
   }
 
   return (
     <p>
-      { searchParamsStrList.map((str, index) => {
-        if (index === 0) {
-          return str;
-        } else {
-          return (
-            <><br />{str}</>
-          )
-        }
-      }) }
+      SearchParams:
+      { searchParamsStrList.map(str => <><br />{str}</>) }
     </p>
   )
 }
