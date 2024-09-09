@@ -4,6 +4,7 @@ import './App.css'
 import { TonConnectButton } from '@tonconnect/ui-react'
 import { useAccount, useSignMessage } from 'wagmi';
 import { URLSearchParams } from 'url';
+import { SearchParamsViewer } from './components/SearchParamsViewer';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
 // import {
 //   MetaMaskButton,
@@ -77,6 +78,7 @@ function App() {
         <button onClick={() => WebApp.openTelegramLink(shareUrl)}>
           Invite Message
         </button>
+        <SearchParamsViewer />
       </div>
     </>
   )
