@@ -1,8 +1,5 @@
 import { useState } from "react";
 import WebApp from '@twa-dev/sdk'
-export interface WebApp {
-  requestContact: (callback?: (access: boolean) => unknown) => void;
-}
 
 export const WebAppViewer = () => {
   const [webAppStrList, setWebAppStrList] = useState<Record<string, string | number>>({});
