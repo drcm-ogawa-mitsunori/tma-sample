@@ -16,8 +16,8 @@ export const WebAppViewer = () => {
     newWebAppStrList.platform = WebApp.platform;
     newWebAppStrList.backgroundColor = WebApp.backgroundColor;
     newWebAppStrList.isClosingConfirmationEnabled = WebApp.isClosingConfirmationEnabled ? 'true' : 'false';
-    newWebAppStrList.themeParams = Object.keys(WebApp.themeParams).map(key => `${key}=${(WebApp.themeParams as any)[key]}`).join(','),
-    newWebAppStrList.initDataUnsafe = Object.keys(WebApp.initDataUnsafe).map(key => `${key}=${(WebApp.initDataUnsafe as any)[key]}`).join(','),
+    // newWebAppStrList.themeParams = Object.keys(WebApp.themeParams).map(key => `${key}=${(WebApp.themeParams as any)[key]}`).join(','),
+    // newWebAppStrList.initDataUnsafe = Object.keys(WebApp.initDataUnsafe).map(key => `${key}=${(WebApp.initDataUnsafe as any)[key]}`).join(','),
     newWebAppStrList.initData = WebApp.initData;
     newWebAppStrList.colorScheme = WebApp.colorScheme;
     setWebAppStrList(newWebAppStrList);
