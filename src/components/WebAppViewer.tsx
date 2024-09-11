@@ -16,8 +16,7 @@ export const WebAppViewer = () => {
       newWebAppStrList.isClosingConfirmationEnabled = WebApp.isClosingConfirmationEnabled ? 'true' : 'false';
       // newWebAppStrList.themeParams = Object.keys(WebApp.themeParams).map(key => `${key}=${(WebApp.themeParams as any)[key]}`).join(','),
       // newWebAppStrList.initDataUnsafe = Object.keys(WebApp.initDataUnsafe).map(key => `${key}=${(WebApp.initDataUnsafe as any)[key]}`).join(','),
-      // newWebAppStrList.initData = WebApp.initData;
-      newWebAppStrList.initDataType = typeof WebApp.initData;
+      newWebAppStrList.initData = WebApp.initData;
       newWebAppStrList.colorScheme = WebApp.colorScheme;
       setWebAppStrList(newWebAppStrList);
     } catch (err) {
