@@ -5,6 +5,7 @@ import { TonConnectButton } from '@tonconnect/ui-react'
 import { useAccount, useSignMessage } from 'wagmi';
 import { URLSearchParams } from 'url';
 import { SearchParamsViewer } from './components/SearchParamsViewer';
+import { WebAppViewer } from './components/WebAppViewer';
 // import { ConnectButton } from '@rainbow-me/rainbowkit';
 // import {
 //   MetaMaskButton,
@@ -79,6 +80,7 @@ function App() {
           Invite Message
         </button>
         <SearchParamsViewer />
+        <WebAppViewer />
       </div>
     </>
   )
