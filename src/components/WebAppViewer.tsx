@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import WebApp from '@twa-dev/sdk'
+import WebApp from '@twa-dev/sdk'
 
 export const WebAppViewer = () => {
   const [webAppStrList, setWebAppStrList] = useState<Record<string, string | number>>({});
@@ -8,8 +8,7 @@ export const WebAppViewer = () => {
   if (webAppStrListKeys.length <= 0) {
     try {
       const newWebAppStrList: Record<string, string | number> = {};
-      newWebAppStrList.isExpanded = 'false';
-      // newWebAppStrList.isExpanded = WebApp.isExpanded ? 'true' : 'false';
+      newWebAppStrList.isExpanded = WebApp.isExpanded ? 'true' : 'false';
       // newWebAppStrList.viewportHeight = WebApp.viewportHeight;
       // newWebAppStrList.viewportStableHeight = WebApp.viewportStableHeight;
       // newWebAppStrList.platform = WebApp.platform;
